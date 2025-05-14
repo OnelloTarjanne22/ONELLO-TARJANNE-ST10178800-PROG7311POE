@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PROG7311POE_ST10178800.Models.Product>
+
+@{
+    ViewData["Title"] = "Farmer Products";
+}
+
+<h2>Products added by farmer</h2>
+
+<form asp-action="ViewProducts" asp-controller="Employee" method="get">
+    <input type="hidden" name="farmerId" value="@ViewBag.FarmerId" />
+
+    <label>Category:</label>
+    <input type="text" name="category" class="form-control" />
+
+    <label>From Date:</label>
+    <input type="date" name="fromDate" class="form-control" />
+
+    <label>To Date:</label>
+    <input type="date" name="toDate" class="form-control" />
+
+    <button type="submit" class="btn btn-primary mt-2">Filter</button>
+</form>
+
+@if (Model.Any())
+{
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Date Added</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>@product.DateAdded.ToShortDateString()</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products found for this farmer.</p>
+}

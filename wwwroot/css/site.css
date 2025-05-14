@@ -1,0 +1,68 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+    background-color: #132519;
+    color: white;
+}
+body {
+    background-image: url('../images/pexels-todd-trapani-488382-1382102.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1 {
+    color: white;
+}
+.row {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: #132519;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+.table {
+    color: white;
+    background-color: #333; 
+}
+
+    .table th, .table td {
+        color: white;
+    }
+
+    .table thead {
+        background-color: #555;
+    }
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(1); 
+}

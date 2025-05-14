@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PROG7311POE_ST10178800.Models.Farmer>
+
+@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+
+<h1>Farmers</h1>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FullName</td>
+                    <td>@item.Email</td>
+                    <td>
+                        <a asp-action="ViewProducts" asp-controller="Employee" asp-route-farmerId="@item.UserId" class="btn btn-primary">
+                            View Products
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No farmers found.</p>
+}

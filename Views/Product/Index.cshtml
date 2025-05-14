@@ -1,0 +1,35 @@
+﻿@model IEnumerable<PROG7311POE_ST10178800.Models.Product>
+@{
+    ViewData["Title"] = "All Products";
+}
+
+<h2>All Productsin</h2>
+
+@if (Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Date Added</th>
+                <th>Farmer ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.Category</td>
+                    <td>@p.DateAdded.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>@p.FarmerId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products found.</p>
+}

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Product>
+@if (Model != null && Model.Any())
+{
+    <h3 class="mt-4">Filtered Products</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Date Added</th>
+                <th>Farmer ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Category</td>
+                    <td>@product.DateAdded.ToShortDateString()</td>
+                    <td>@product.FarmerId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (Model != null)
+{
+    <p>No products matched your filter.</p>
+}

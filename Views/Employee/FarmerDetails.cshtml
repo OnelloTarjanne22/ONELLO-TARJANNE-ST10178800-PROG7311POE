@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Farmer>
+<h1>All Farmers</h1>
+<a asp-action="AddFarmer">Add Farmer</a>
+<table>
+    <tr><th>Full Name</th><th>Email</th></tr>
+    @foreach (var farmer in Model)
+    {
+        <tr>
+            <td>@farmer.FullName</td>
+            <td>@farmer.Email</td>
+        </tr>
+    }
+</table>

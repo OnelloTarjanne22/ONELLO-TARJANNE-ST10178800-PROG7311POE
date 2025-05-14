@@ -1,0 +1,29 @@
+﻿@model PROG7311POE_ST10178800.Models.Product
+@{
+    ViewData["Title"] = "Add Product";
+}
+<div class="row">
+<h2>Add New Product</h2>
+<form asp-controller="Farmer" asp-action="AddProduct" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Category"></label>
+        <input asp-for="Category" class="form-control" required />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateAdded">Production Date</label>
+        <input asp-for="DateAdded" type="datetime-local" class="form-control" required />
+        <span asp-validation-for="DateAdded" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</div>
+
