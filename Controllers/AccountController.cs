@@ -11,17 +11,20 @@ namespace PROG7311POE_ST10178800.Controllers
         private readonly SignInManager<Employee> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUserService _userService;
+        private readonly IFarmerService _farmerService;
 
         public AccountController(
             UserManager<Employee> userManager,
             SignInManager<Employee> signInManager,
             RoleManager<IdentityRole> roleManager,
-            IUserService userService)
+            IUserService userService,
+            IFarmerService farmerService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _userService = userService;
+            _farmerService = farmerService;
         }
 
         [HttpGet]
@@ -60,6 +63,17 @@ namespace PROG7311POE_ST10178800.Controllers
                 }
 
                 await _userManager.AddToRoleAsync(user, role);
+                // If user is a Farmer, add to Farmers table
+                if (role == "Farmer")
+                {
+                    var farmer = new Farmer
+                    {
+                        FullName = fullName,
+                        Email = email,
+                        UserId = user.Id
+                    };
+                    await _farmerService.AddFarmerAsync(farmer);
+                }
 
                 // Sign in the user
                 await _signInManager.SignInAsync(user, isPersistent: false);
