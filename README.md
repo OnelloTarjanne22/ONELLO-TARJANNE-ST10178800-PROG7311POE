@@ -11,3 +11,12 @@
 ![Screenshot 2025-05-14 052730](https://github.com/user-attachments/assets/775ae4e7-dfac-4ea7-9e15-2aafb037a6f6)
 ## Finally,press the play icon to run the project
 ![Screenshot 2025-05-13 163427](https://github.com/user-attachments/assets/bec76008-e467-45fe-b9df-91b77895ffb7)
+GitHub Repo:https://github.com/OnelloTarjanne22/ONELLO-TARJANNE-ST10178800-PROG7311POE.git
+## REFERENCES
+Tech & Code with Phi (2022). .NET 6 - ASP.NET core MVC - (Add database - SQLITE). [online] YouTube. Available at: https://www.youtube.com/watch?v=S7SdtcIr28s [Accessed 3 May 2025].
+tutorialsEU - C# (2023).ASP.NET User Roles - Create and Assign Roles for AUTHORIZATION! [online] YouTube. Available at: https://www.youtube.com/watch?v=Y6DCP-yH-9Q [Accessed 3 May 2025].
+IIE(2025).PROGRAMMING 3A MODULE MANUAL 2025.[online].Available at:https://advtechonline.sharepoint.com/:w:/r/sites/TertiaryStudents/_layouts/15/Doc.aspx?sourcedoc=%7B7A1EE905-8810-47C0-8A7A-716C5F2DB1D9%7D&file=PROG7311MM.docx&action=default&mobileredirect=true
+### To view the data in sqllite databasee/app.db file ,downlaod the sqllite/sql server compact toolbox extension in your visual studio
+‌
+
+‌

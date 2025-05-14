@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PROG7311POE_ST10178800.Models;
 using PROG7311POE_ST10178800.Services;
+//Adapted from tutorial by (tutorialsEU,2023)
 
 namespace PROG7311POE_ST10178800.Controllers
 {
@@ -35,10 +36,11 @@ namespace PROG7311POE_ST10178800.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            // Get products for this farmer
+            // Retreives products for this farmer
             var products = await _productService.GetProductsByFarmerAsync(user.Id);
             return View(products);
         }
+        // Method to delete your listed product under the farmer role
         [HttpPost]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -55,7 +57,7 @@ namespace PROG7311POE_ST10178800.Controllers
         {
             return View();
         }
-
+        // Method to redirect user back after their page is deleted
         [HttpPost]
         public async Task<IActionResult> AddProduct(Product product)
         {

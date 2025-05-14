@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using PROG7311POE_ST10178800.Models;
+//Based on example from (IIE,2025)
 
 namespace PROG7311POE_ST10178800.Services
 {
@@ -13,7 +14,7 @@ namespace PROG7311POE_ST10178800.Services
             _userManager = userManager;
             _roleManager = roleManager;
         }
-
+        // Registering of user with the role assignment
         public async Task RegisterUserAsync(Employee user, string password, string role)
         {
             var result = await _userManager.CreateAsync(user, password);
@@ -25,7 +26,7 @@ namespace PROG7311POE_ST10178800.Services
                 await _userManager.AddToRoleAsync(user, role);
             }
         }
-
+        //Retreival of user using their email
         public async Task<Employee?> GetUserByEmailAsync(string email)
         {
             return await _userManager.FindByEmailAsync(email);

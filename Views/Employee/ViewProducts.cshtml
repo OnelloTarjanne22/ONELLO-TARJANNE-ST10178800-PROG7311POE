@@ -4,22 +4,32 @@
     ViewData["Title"] = "Farmer Products";
 }
 
-<h2>Products added by farmer</h2>
+<h1>@ViewData["Title"]</h1>
 
-<form asp-action="ViewProducts" asp-controller="Employee" method="get">
+<form asp-action="ViewProducts" asp-controller="Employee" method="get" class="d-flex align-items-end gap-2 mb-3">
     <input type="hidden" name="farmerId" value="@ViewBag.FarmerId" />
 
-    <label>Category:</label>
-    <input type="text" name="category" class="form-control" />
+    <div>
+        <label class="form-label form-label-sm mb-0">Category:</label>
+        <input type="text" name="category" class="form-control form-control-sm" />
+    </div>
 
-    <label>From Date:</label>
-    <input type="date" name="fromDate" class="form-control" />
+    <div>
+        <label class="form-label form-label-sm mb-0">From Date:</label>
+        <input type="date" name="fromDate" class="form-control form-control-sm" />
+    </div>
 
-    <label>To Date:</label>
-    <input type="date" name="toDate" class="form-control" />
+    <div>
+        <label class="form-label form-label-sm mb-0">To Date:</label>
+        <input type="date" name="toDate" class="form-control form-control-sm" />
+    </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Filter</button>
+    <div>
+        <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+    </div>
 </form>
+
+
 
 @if (Model.Any())
 {
@@ -45,5 +55,5 @@
 }
 else
 {
-    <p>No products found for this farmer.</p>
+    <p>No products found</p>
 }

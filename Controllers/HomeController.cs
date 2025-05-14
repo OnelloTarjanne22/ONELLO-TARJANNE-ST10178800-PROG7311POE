@@ -15,7 +15,7 @@ namespace PROG7311POE_ST10178800.Controllers
         }
 
         public IActionResult Index()
-        {
+        {//Log for when a user is directed to  Index page
             _logger.LogInformation("Navigated to Index page.");
             return View();
         }
@@ -72,8 +72,8 @@ namespace PROG7311POE_ST10178800.Controllers
         [HttpPost]
         public IActionResult FilterProducts(string category, DateTime? fromDate, DateTime? toDate)
         {
-            // Logic to filter products based on parameters
-            return RedirectToAction("FilteredResults"); // Assuming you want to show the results
+            // Logic to filter products based on the parameters
+            return RedirectToAction("FilteredResults"); 
         }
 
         public IActionResult FilteredResults()

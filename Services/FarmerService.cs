@@ -2,6 +2,7 @@
 using PROG7311POE_ST10178800.Models;
 using Microsoft.EntityFrameworkCore;
 using PROG7311POE_ST10178800.Services;
+//Based on example from (IIE,2025)
 public class FarmerService : IFarmerService
 {
     private readonly AppDbContext _context;

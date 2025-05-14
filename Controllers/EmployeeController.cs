@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PROG7311POE_ST10178800.Models;
 using PROG7311POE_ST10178800.Services;
-
+////Adapted from tutorial by (tutorialsEU,2023)
 namespace PROG7311POE_ST10178800.Controllers
 {
-    [Authorize(Roles = "Employee")]
+    [Authorize(Roles = "Employee")]// Only for persons in the employee role
     public class EmployeeController : Controller
     {
         private readonly IFarmerService _farmerService;
@@ -40,6 +40,7 @@ namespace PROG7311POE_ST10178800.Controllers
             var farmers = await _farmerService.GetAllFarmersAsync();
             return View(farmers);
         }
+        //Method to view the products of a specific farmer as an employee
         [HttpGet]
         public async Task<IActionResult> ViewProducts(string farmerId, string category, DateTime? fromDate, DateTime? toDate)
         {
@@ -77,7 +78,7 @@ namespace PROG7311POE_ST10178800.Controllers
         {
             return View();
         }
-
+        //Method to add farmer profile while logged in as employee
         [HttpPost]
         public async Task<IActionResult> AddFarmer(RegisterViewModel model)
         {
@@ -85,7 +86,7 @@ namespace PROG7311POE_ST10178800.Controllers
             {
                 return View(model);
             }
-
+            //Creating the new employee profile with essesntial details
             var user = new Employee
             {
                 UserName = model.Email,
@@ -131,7 +132,7 @@ namespace PROG7311POE_ST10178800.Controllers
         {
             return View();
         }
-
+        // Method to direct users to the filter products page after their selection of filters
         [HttpPost]
         public async Task<IActionResult> FilterProducts(string category, DateTime? fromDate, DateTime? toDate)
         {

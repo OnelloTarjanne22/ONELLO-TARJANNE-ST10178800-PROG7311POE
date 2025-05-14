@@ -1,4 +1,5 @@
 ﻿using PROG7311POE_ST10178800.Models;
+//Based on example from (IIE,2025)
 
 public interface IUserService
 {

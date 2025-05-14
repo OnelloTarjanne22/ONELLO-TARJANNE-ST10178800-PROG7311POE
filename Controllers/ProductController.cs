@@ -26,6 +26,7 @@ namespace PROG7311POE_ST10178800.Controllers
         {
             return View();
         }
+        // Method for filtering the products based on the filters applied by user
         [HttpPost]
         public async Task<IActionResult> FilterProducts(DateTime? fromDate, DateTime? toDate, string searchTerm)
         {
@@ -49,20 +50,7 @@ namespace PROG7311POE_ST10178800.Controllers
             var filteredProducts = await productsQuery.ToListAsync();
             return View("FilterProducts", filteredProducts);
         }
-
-        [HttpGet]
-        public async Task<IActionResult> FilterProducts()
-        {
-            var categories = await _context.Products
-                .Select(p => p.Category)
-                .Distinct()
-                .ToListAsync();
-
-            ViewBag.Categories = categories;
-
-            return View();
-        }
-
+        //Method to post the productss to the products table then return to dashboard when done successfully
         [HttpPost]
         public async Task<IActionResult> AddProduct(Product product)
         {
